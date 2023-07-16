@@ -24,51 +24,47 @@ function pwReg(text){
   return re.test(String(text).toLowerCase());
 }
 
-function email() {
-  const emailinput = document.querySelector('#userEmail');
-if ()
+
+
+// 상태 변수
+let isLoggedIn = false;
+let errorMessage = '';
+
+function handleLogin() {
+  const emailInput = document.getElementById('userEmail');
+  const passwordInput = document.getElementById('userPassword');
+
+  const email = emailInput.value;
+  const password = passwordInput.value;
+
+  // 이메일 및 비밀번호 유효성 검사
+  if (!emailReg(email)) {
+    errorMessage = '이메일은 유효한 형식이어야 합니다.';
+  } else if (!pwReg(password)) {
+    errorMessage = '비밀번호는 영문, 숫자, 특수문자를 포함한 6자 이상 16자 이하여야 합니다.';
+  } else if (email !== user.id || password !== user.pw) {
+    errorMessage = '이메일 또는 비밀번호가 일치하지 않습니다.';
+  } else {
+    // 로그인 성공
+    isLoggedIn = true;
+    errorMessage = '';
+
+    window.location.href = 'welcome.html';
+  }
+
+  // 에러 메시지 출력
+  const errorMessageElement = document.getElementById('errorMessage');
+  errorMessageElement.textContent = errorMessage;
+
+  // 로그인 상태에 따른 처리
+  if (isLoggedIn) {
+    // 로그인 성공 시 수행할 동작
+    console.log('로그인 성공!');
+  } else {
+    // 로그인 실패 시 수행할 동작
+    console.log('로그인 실패!');
+  }
 }
-
-
-// // 상태 변수
-// let isLoggedIn = false;
-// let errorMessage = '';
-
-// function handleLogin() {
-//   const emailInput = document.getElementById('userEmail');
-//   const passwordInput = document.getElementById('userPassword');
-
-//   const email = emailInput.value;
-//   const password = passwordInput.value;
-
-//   // 이메일 및 비밀번호 유효성 검사
-//   if (!emailReg(email)) {
-//     errorMessage = '이메일은 유효한 형식이어야 합니다.';
-//   } else if (!pwReg(password)) {
-//     errorMessage = '비밀번호는 영문, 숫자, 특수문자(!@#$%^*+=-)를 포함한 6자 이상 16자 이하여야 합니다.';
-//   } else if (email !== user.id || password !== user.pw) {
-//     errorMessage = '이메일 또는 비밀번호가 일치하지 않습니다.';
-//   } else {
-//     // 로그인 성공
-//     isLoggedIn = true;
-//     errorMessage = '';
-//   }
-
-//   // 에러 메시지 출력
-//   const errorMessageElement = document.getElementById('errorMessage');
-//   errorMessageElement.textContent = errorMessage;
-
-//   // 로그인 상태에 따른 처리
-//   if (isLoggedIn) {
-//     // 로그인 성공 시 수행할 동작
-//     console.log('로그인 성공!');
-//     // 여기에 필요한 로직 추가
-//   } else {
-//     // 로그인 실패 시 수행할 동작
-//     console.log('로그인 실패!');
-//     // 여기에 필요한 로직 추가
-//   }
-// }
 
 
 
