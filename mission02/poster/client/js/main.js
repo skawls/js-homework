@@ -9,7 +9,7 @@
 
 */
 
-// HTML 문서를 모두 로드한 후에 실행
+// DOMContentLoaded 이벤트를 사용하여 HTML 문서가 완전히 로드된 후에 JavaScript 코드가 실행되도록 합니다.
 document.addEventListener('DOMContentLoaded', function() {
     // 데이터를 불러온다. (data.js에서 가져온다고 가정)
     const data = [
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-// // DOMContentLoaded 이벤트를 사용하여 HTML 문서가 완전히 로드된 후에 JavaScript 코드가 실행되도록 합니다.
+// DOMContentLoaded 이벤트를 사용하여 HTML 문서가 완전히 로드된 후에 JavaScript 코드가 실행되도록 합니다.
 // document.addEventListener("DOMContentLoaded", function () {
 //     // li 요소들을 모두 선택합니다.
 //     const liElements = document.querySelectorAll(".nav li");
